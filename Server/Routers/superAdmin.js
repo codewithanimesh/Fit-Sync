@@ -1,0 +1,14 @@
+const express=require("express");
+const { getStats,getAllUsers ,getSubscriptionDataByEmail,getAllGyms, gymOwners,RegisterGymofOwner,UserRecordForSuperAdmin,GymHistoryRecordForSuperAdmin,getUser,GymHistoryRecordForGymOwner} = require("../controller/superAdminController");
+const superAdmin=express.Router();
+superAdmin.get("/getStats",getStats);
+superAdmin.get("/getAllUsers",getAllUsers);
+superAdmin.get("/getSubscriptionData/:Email",getSubscriptionDataByEmail);
+superAdmin.get("/getAllGyms",getAllGyms);
+superAdmin.get("/gymOwners",gymOwners);
+superAdmin.get("/RegisterGymofOwner/:Email",RegisterGymofOwner);
+superAdmin.get("/UserRecordForSuperAdmin/:userEmail",UserRecordForSuperAdmin);
+superAdmin.get("/GymHistoryRecordForSuperAdmin/:ownerEmail/:gymName/:location/",GymHistoryRecordForSuperAdmin);
+superAdmin.get("/getUser/:Email",getUser);
+superAdmin.get("/GymHistoryRecordForGymOwner/:ownerEmail/:gymName/:location",GymHistoryRecordForGymOwner);
+module.exports=superAdmin ;
